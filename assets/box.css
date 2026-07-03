@@ -1,0 +1,260 @@
+:root {
+  color-scheme: light;
+  --ink: #151515;
+  --muted: #5d6166;
+  --line: #d7dadd;
+  --surface: #f5f6f7;
+  font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  min-width: 0;
+  background: #fff;
+  color: var(--ink);
+  font-size: 1rem;
+  line-height: 1.5;
+}
+
+.accent-rule {
+  height: 0.625rem;
+  background: var(--accent);
+}
+
+.page-header,
+main,
+footer {
+  width: min(100% - 3rem, 72rem);
+  margin-inline: auto;
+}
+
+.page-header {
+  padding-block: 3rem 2.25rem;
+}
+
+.box-identity {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: baseline;
+  gap: 0.45rem 0.8rem;
+  margin: 0 0 0.7rem;
+  color: var(--accent);
+  font-size: 1.05rem;
+  font-weight: 650;
+}
+
+.box-identity strong {
+  font-size: 1.45rem;
+  letter-spacing: -0.02em;
+}
+
+.box-identity span::before {
+  content: "•";
+  margin-right: 0.8rem;
+}
+
+h1 {
+  max-width: 18ch;
+  margin: 0;
+  font-size: 3.5rem;
+  line-height: 1.02;
+  letter-spacing: -0.035em;
+  text-wrap: balance;
+  overflow-wrap: anywhere;
+}
+
+.purpose {
+  max-width: 65ch;
+  margin: 1rem 0 1.4rem;
+  color: var(--muted);
+  font-size: 1.1rem;
+  text-wrap: pretty;
+}
+
+.metadata {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.55rem;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.metadata li {
+  border-radius: 999px;
+  background: var(--accent-soft);
+  color: var(--accent);
+  padding: 0.45rem 0.75rem;
+  font-size: 0.925rem;
+  font-weight: 700;
+}
+
+main {
+  padding-bottom: 3.5rem;
+}
+
+.search-region {
+  padding: 1.4rem;
+  background: var(--surface);
+  border-radius: 0.75rem;
+}
+
+.search-region label {
+  display: block;
+  margin-bottom: 0.5rem;
+  font-weight: 750;
+}
+
+.search-region input {
+  display: block;
+  width: 100%;
+  min-height: 3.25rem;
+  border: 2px solid #767b80;
+  border-radius: 0.5rem;
+  background: #fff;
+  color: var(--ink);
+  padding: 0.7rem 0.9rem;
+  font: inherit;
+}
+
+.search-region input::placeholder {
+  color: #60656a;
+}
+
+.search-region input:focus-visible,
+a:focus-visible {
+  outline: 3px solid var(--accent);
+  outline-offset: 3px;
+}
+
+.result-count {
+  margin: 0.65rem 0 0;
+  color: var(--muted);
+  font-size: 0.925rem;
+  font-weight: 650;
+}
+
+.inventory-grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 2.5rem 3.5rem;
+  margin-top: 3rem;
+}
+
+.inventory-category {
+  min-width: 0;
+  border-top: 0.3rem solid var(--accent);
+  padding-top: 0.9rem;
+}
+
+.category-heading {
+  display: flex;
+  align-items: baseline;
+  justify-content: space-between;
+  gap: 1rem;
+  margin: 0 0 0.75rem;
+  color: var(--accent);
+  font-size: 1.25rem;
+  line-height: 1.2;
+  letter-spacing: -0.015em;
+}
+
+.category-heading span {
+  flex: none;
+  color: var(--muted);
+  font-size: 0.875rem;
+  font-weight: 650;
+}
+
+.inventory-list {
+  margin: 0;
+  padding-left: 1.3rem;
+}
+
+.inventory-item {
+  margin-bottom: 0.55rem;
+  padding-left: 0.15rem;
+  line-height: 1.45;
+  overflow-wrap: anywhere;
+}
+
+.inventory-item::marker {
+  color: var(--accent);
+}
+
+.empty-results {
+  margin: 2rem 0 0;
+  border-top: 0.3rem solid var(--accent);
+  padding-top: 1rem;
+  font-weight: 750;
+}
+
+footer {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  gap: 1rem 2rem;
+  border-top: 1px solid var(--line);
+  padding-block: 1.5rem 2.5rem;
+  color: var(--muted);
+  font-size: 0.925rem;
+}
+
+footer a {
+  color: var(--accent);
+  font-weight: 750;
+}
+
+footer p {
+  margin: 0;
+}
+
+[hidden] {
+  display: none !important;
+}
+
+@media (max-width: 47.99rem) {
+  .page-header,
+  main,
+  footer {
+    width: min(100% - 2rem, 72rem);
+  }
+
+  .page-header {
+    padding-block: 2rem 1.75rem;
+  }
+
+  h1 {
+    font-size: 2.35rem;
+  }
+
+  .search-region {
+    padding: 1rem;
+  }
+
+  .inventory-grid {
+    grid-template-columns: 1fr;
+    gap: 2rem;
+    margin-top: 2.25rem;
+  }
+
+  footer {
+    display: block;
+  }
+
+  footer p {
+    margin-top: 0.75rem;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    scroll-behavior: auto !important;
+  }
+}
